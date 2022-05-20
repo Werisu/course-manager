@@ -27,7 +27,7 @@
       <td><img [src]="item.imageUrl" width="40" alt=""></td>
       <td>{{item.name}}</td>
       <td>{{item.price}}</td>
-      <td>{{item.code}}</td>
+      <td>{{item.code | lowercase | replace: '-': ' '}}</td>
       <td>{{item.releaseDate}}</td>
       <td>
         <app-star [rating]="item.rating"></app-star>
