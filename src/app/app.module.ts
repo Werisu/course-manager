@@ -1,3 +1,4 @@
+import { CourseModule } from './courses/course.module';
 import { CourseInfoComponent } from './courses/course-info.component';
 import { Error404Component } from './error-404/error-404.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -15,18 +16,12 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    CourseListComponent,
-    StarComponent,
-    ReplacePipe,
-    NavBarComponent,
-    CourseInfoComponent
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    CourseModule,
     RouterModule.forRoot([
-      { path: 'courses', component: CourseListComponent },
-      { path: 'courses/info/:id', component: CourseInfoComponent },
       { path: '', redirectTo: 'courses', pathMatch: 'full' },
       { path: '**', component: Error404Component }
     ]),
