@@ -1,1 +1,49 @@
-COURSE: {{ courseId }}
+<h2>Course Info</h2>
+
+<hr/>
+
+<form #courseForm="ngForm">
+  <div class="form-group row">
+    <label for="" class="col-sm-2 col-from-label">Name:</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="course.name" required type="text" class="form-control" name="name" #courseName="ngModel" [ngClass]="{'is-invalid': courseName.invalid}">
+      <div class="invalid-feedback">
+        <span>Course name is required</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="" class="col-sm-2 col-from-label">Price:</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="course.price" required type="number" class="form-control" name="price" #coursePrice="ngModel" [ngClass]="{'is-invalid': coursePrice.invalid}">
+      <div class="invalid-feedback">
+        <span>Course price is required</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="" class="col-sm-2 col-from-label">Rating:</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="course.rating" required type="number" class="form-control" name="rating" #courseRating="ngModel" [ngClass]="{'is-invalid': courseRating.invalid}">
+      <div class="invalid-feedback">
+        <span>Course rating is required</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="" class="col-sm-2 col-from-label">Description:</label>
+    <div class="col-sm-10">
+      <textarea [(ngModel)]="course.description" required type="text" class="form-control" name="description" #courseDescription="ngModel" [ngClass]="{'is-invalid': courseDescription.invalid}"></textarea>
+      <div class="invalid-feedback">
+        <span>Course description is required</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary ms-2" [disabled]="courseForm.invalid" (click)="save()">Save</button>
+  <button [routerLink]="['/']" class="btn btn-secondary ms-2">Cancel</button>
+
+</form>

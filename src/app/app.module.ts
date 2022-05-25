@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -17,7 +17,8 @@ import { RouterModule } from '@angular/router';
     CourseListComponent,
     StarComponent,
     ReplacePipe,
-    NavBarComponent
+    NavBarComponent,
+    CourseInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +28,8 @@ import { RouterModule } from '@angular/router';
       { path: 'courses/info/:id', component: CourseInfoComponent },
       { path: '', redirectTo: 'courses', pathMatch: 'full' },
       { path: '**', component: Error404Component }
-    ])
+    ]),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
