@@ -1,3 +1,4 @@
+import { CourseInfoComponent } from './courses/course-info.component';
 import { Error404Component } from './error-404/error-404.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ReplacePipe } from './pipe/replace.pipe';
@@ -22,15 +23,10 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
-      {
-        path: '', redirectTo: 'courses', pathMatch: 'full'
-      },
-      {
-        path: 'courses', component: CourseListComponent
-      },
-      {
-        path: '**', component: Error404Component
-      }
+      { path: 'courses', component: CourseListComponent },
+      { path: 'courses/info/:id', component: CourseInfoComponent },
+      { path: '', redirectTo: 'courses', pathMatch: 'full' },
+      { path: '**', component: Error404Component }
     ])
   ],
   providers: [],
