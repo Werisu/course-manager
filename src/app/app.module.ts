@@ -1,6 +1,4 @@
 import { CourseModule } from './courses/course.module';
-import { Error404Component } from './error-404/error-404.component';
-import { NavBarComponent } from './core/components/nav-bar/nav-bar.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -18,8 +16,7 @@ import { CoreModule } from './core/core.module';
     CourseModule,
     CoreModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'courses', pathMatch: 'full' },
-      { path: '**', component: Error404Component }
+      { path: '', redirectTo: 'courses', pathMatch: 'full' }
     ]),
     HttpClientModule
   ],
