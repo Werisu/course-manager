@@ -18,7 +18,7 @@ import { AppPipeModule } from '../shared/pipes/app-pipe.module';
     StarModule,
     AppPipeModule,
     RouterModule.forChild([
-      { path: 'courses', component: CourseListComponent },
+      { path: '', component: CourseListComponent },
       { path: 'courses/info/:id', component: CourseInfoComponent },
     ]),
   ]
