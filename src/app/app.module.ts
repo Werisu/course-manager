@@ -16,7 +16,7 @@ import { CoreModule } from './core/core.module';
     CourseModule,
     CoreModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'courses', pathMatch: 'full' }
+      { path: '', redirectTo: '/courses', pathMatch: 'full' }
     ]),
     HttpClientModule
   ],
